@@ -50,7 +50,7 @@ while True:
         retvalbin, bins = cv2.threshold(dilation, 220, 255, cv2.THRESH_BINARY)  # removes the shadows
 
         # creates contours
-        im2, contours, hierarchy = cv2.findContours(bins, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        contours, hierarchy = cv2.findContours(bins, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
         # use convex hull to create polygon around contours
         hull = [cv2.convexHull(c) for c in contours]
